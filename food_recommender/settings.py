@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-a3cer-wu495@m1gc9a$+9ds9scti%-tz4+-*-2j1rfn-0*xgtn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "tasteai-production.up.railway.app",
+    "127.0.0.1",
+    "localhost",
+]
 
 
 # Application definition
