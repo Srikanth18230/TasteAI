@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Menu</title>
+    <style>
+        body {
+            background: #f5f5f5;
+            font-family: Arial;
+        }
+
+        .card {
+            width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: orange;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+        }
+
+        button {
+            background: orange;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .count {
+            font-size: 20px;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Food Menu</h1>
+
+    <div class="item">
+        <div class="left">
+            <img src="{% static 'image/burger.jpg' %}">
+            <span>Burger - ₹40</span>
+        </div>
+        <div>
+            <a href="/remove/burger/"><button>-</button></a>
+            <span class="count">{{ item_counts.burger }}</span>
+            <a href="/add/burger/"><button>+</button></a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="left">
+            <img src="{% static 'image/coke.jpg' %}">
+            <span>Coke - ₹20</span>
+        </div>
+        <div>
+            <a href="/remove/coke/"><button>-</button></a>
+            <span class="count">{{ item_counts.coke }}</span>
+            <a href="/add/coke/"><button>+</button></a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="left">
+            <img src="{% static 'image/pasta.jpg' %}">
+            <span>Pasta - ₹60</span>
+        </div>
+        <div>
+            <a href="/remove/pasta/"><button>-</button></a>
+            <span class="count">{{ item_counts.pasta }}</span>
+            <a href="/add/pasta/"><button>+</button></a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="left">
+            <img src="{% static 'image/biryani.jpg' %}">
+            <span>Biryani - ₹150</span>
+        </div>
+        <div>
+            <a href="/remove/biryani/"><button>-</button></a>
+            <span class="count">{{ item_counts.biryani }}</span>
+            <a href="/add/biryani/"><button>+</button></a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="left">
+            <img src="{% static 'image/cold_coffee.jpg' %}">
+            <span>Cold Coffee - ₹70</span>
+        </div>
+        <div>
+            <a href="/remove/cold_coffee/"><button>-</button></a>
+            <span class="count">{{ item_counts.cold_coffee }}</span>
+            <a href="/add/cold_coffee/"><button>+</button></a>
+        </div>
+    </div>
+
+    <div class="item">
+        <div class="left">
+            <img src="{% static 'image/mandi.jpg' %}">
+            <span>Mandi - ₹250</span>
+        </div>
+        <div>
+            <a href="/remove/mandi/"><button>-</button></a>
+            <span class="count">{{ item_counts.mandi }}</span>
+            <a href="/add/mandi/"><button>+</button></a>
+        </div>
+    </div>
+
+    <h2>Cart Count: {{ cart_count }}</h2>
+    <h2>Total: ₹{{ total }}</h2>
+    <a href="/checkout/">
+    <button style="width:200px;">Checkout</button>
+</a>
+</div>
+
+</body>
+</html>
