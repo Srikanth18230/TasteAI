@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Cart
+from datetime import datetime
 
 FOOD_PRICES = {
     "burger": 40,
@@ -12,7 +13,12 @@ FOOD_PRICES = {
     "sweet": 30
 }
 
+# First page
+def landing(request):
+    return render(request, "landing.html")
 
+
+# Menu page
 def home(request):
     cart_items = Cart.objects.all()
 
@@ -57,7 +63,7 @@ def add_item(request, food_name):
             price=FOOD_PRICES[food_name]
         )
 
-    return redirect('/')
+    return redirect('/menu/')
 
 
 def remove_item(request, food_name):
@@ -70,8 +76,8 @@ def remove_item(request, food_name):
         else:
             item.delete()
 
-    return redirect('/')
-from datetime import datetime
+    return redirect('/menu/')
+
 
 def checkout(request):
     cart_items = Cart.objects.all()
