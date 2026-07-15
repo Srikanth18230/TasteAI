@@ -93,3 +93,5 @@ def checkout(request):
         "total": total,
         "current_time": current_time
     })
+def login(request):
+    return render(request,"login.html")

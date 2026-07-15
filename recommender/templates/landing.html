@@ -1,125 +1,372 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>TasteAI</title>
-    <style>
-        body{
-            margin:0;
-            font-family:Arial,sans-serif;
-            background:#fff8f0;
-        }
 
-        nav{
-            background:#ff8c00;
-            padding:15px 40px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        nav h2{
-            color:white;
-            margin:0;
-        }
+<title>TasteAI</title>
 
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin-left:20px;
-            font-weight:bold;
-        }
+<style>
 
-        .hero{
-            text-align:center;
-            padding:80px;
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-        .hero img{
-            width:320px;
-            border-radius:20px;
-        }
+body{
+overflow:hidden;
+}
 
-        h1{
-            color:#ff8c00;
-            font-size:48px;
-        }
+/* Hero Background */
 
-        p{
-            font-size:22px;
-            color:#555;
-        }
+.hero-section{
 
-        .btn{
-            display:inline-block;
-            margin-top:25px;
-            padding:15px 35px;
-            background:#ff8c00;
-            color:white;
-            text-decoration:none;
-            border-radius:10px;
-            font-size:20px;
-        }
+height:100vh;
 
-        .features{
-            display:flex;
-            justify-content:center;
-            gap:40px;
-            margin:60px;
-        }
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("{% static 'image/biryani.jpg' %}");
 
-        .box{
-            width:250px;
-            background:white;
-            padding:20px;
-            border-radius:15px;
-            box-shadow:0 5px 15px rgba(0,0,0,.2);
-            text-align:center;
-        }
-    </style>
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+position:relative;
+
+}
+
+/* Navigation */
+
+nav{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:20px 60px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+z-index:100;
+
+}
+
+.logo{
+
+font-size:40px;
+
+font-weight:bold;
+
+color:white;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+}
+
+nav ul li{
+
+margin-left:35px;
+
+}
+
+nav ul li a{
+
+text-decoration:none;
+
+color:white;
+
+font-size:20px;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+color:#FFD54F;
+
+}
+
+/* Hero */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding-bottom:120px;
+
+}
+
+.hero h1{
+
+font-size:70px;
+
+color:white;
+
+text-shadow:2px 2px 10px black;
+
+}
+
+.hero p{
+
+font-size:28px;
+
+color:white;
+
+margin:25px 0;
+
+text-shadow:2px 2px 10px black;
+
+}
+
+/* Buttons */
+
+.buttons{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.btn{
+
+width:220px;
+
+padding:16px;
+
+border-radius:10px;
+
+font-size:20px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.explore{
+
+background:#ff8c00;
+
+color:white;
+
+}
+
+.explore:hover{
+
+background:#ff6600;
+
+}
+
+.login{
+
+background:white;
+
+color:#ff8c00;
+
+}
+
+.login:hover{
+
+background:#ff8c00;
+
+color:white;
+
+}
+
+/* Feature Cards */
+
+.features{
+
+position:absolute;
+
+bottom:20px;
+
+width:100%;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+}
+
+.box{
+
+width:210px;
+
+height:160px;
+
+border-radius:18px;
+
+padding:20px;
+
+text-align:center;
+
+color:white;
+
+box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+transition:.3s;
+
+}
+
+.box:hover{
+
+transform:translateY(-8px);
+
+}
+
+.box:nth-child(1){
+
+background:#E67E22;
+
+}
+
+.box:nth-child(2){
+
+background:#3498DB;
+
+}
+
+.box:nth-child(3){
+
+background:#27AE60;
+
+}
+
+.box h3{
+
+font-size:22px;
+
+margin-bottom:12px;
+
+}
+
+.box p{
+
+font-size:15px;
+
+line-height:22px;
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<nav>
-    <h2>TasteAI</h2>
+<div class="hero-section">
 
-    <div>
-        <a href="/">Home</a>
-        <a href="/menu/">Menu</a>
-    </div>
+<nav>
+
+<div class="logo">TasteAI</div>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/menu/">Menu</a></li>
+
+<li><a href="/login/">Login</a></li>
+
+</ul>
+
 </nav>
 
 <div class="hero">
 
-    <img src="{% static 'image/biryani.jpg' %}">
+<h1>Welcome to TasteAI</h1>
 
-    <h1>Welcome to TasteAI</h1>
+<p>AI Powered Food Recommendation System</p>
 
-    <p>AI Powered Food Recommendation System</p>
+<div class="buttons">
 
-    <a href="/menu/" class="btn">Explore Menu</a>
+<a href="/menu/" class="btn explore">Explore Menu</a>
+
+<a href="/login/" class="btn login">Login</a>
+
+</div>
 
 </div>
 
 <div class="features">
 
+
 <div class="box">
+
 <h3>🍔 Delicious Food</h3>
-<p>Fresh and tasty meals.</p>
+
+<p>
+Fresh, tasty and healthy meals prepared specially for you.
+</p>
+
 </div>
 
 <div class="box">
+
 <h3>🤖 AI Recommendation</h3>
-<p>Smart food suggestions.</p>
+
+<p>
+Smart personalized food recommendations using Machine Learning.
+</p>
+
 </div>
 
 <div class="box">
+
 <h3>⚡ Fast Ordering</h3>
-<p>Simple ordering process.</p>
+
+<p>
+Easy ordering with instant cart updates and quick checkout.
+</p>
+
+</div>
+
 </div>
 
 </div>
 
 </body>
+
 </html>

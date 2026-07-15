@@ -8,3 +8,4 @@ urlpatterns = [
     path('remove/<str:food_name>/', views.remove_item, name='remove_item'),
     path('checkout/', views.checkout, name='checkout'),
 ]
+path("login/",views.login),
